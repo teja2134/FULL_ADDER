@@ -1,6 +1,59 @@
 # FULL_ADDER
+# Aim:
+To simulate and synthesis Full adder using vivado.
+
+# Apparatus Required:
+vivado software.
+
+# Procedure:
+STEP:1 Start the vivado software, Select and Name the New project.
+
+STEP:2 Select the device family, device, package and speed.
+
+STEP:3 Select new source in the New Project and select Verilog Module as the Source type.
+
+STEP:4 Type the File Name and module name and Click Next and then finish button. Type the code and save it.
+
+STEP:5 Select the run simulation adn then run Behavioral Simulation in the Source Window and click the check syntax.
+
+STEP:6 Click the simulation to simulate the program and give the inputs and verify the outputs as per the truth table.
+
+STEP:7 Select the Implementation in the Sources Window and select the required file in the Processes Window.
+
+STEP:8 Select Check Syntax from the Synthesize XST Process. Double Click in the Floorplan Area/IO/Logic-Post Synthesis process in the User Constraints process group. UCF(User constraint File) is obtained.
+
+STEP:9 In the Design Object List Window, enter the pin location for each pin in the Loc column Select save from the File menu.
+
+STEP:10 Double click on the Implement Design and double click on the Generate Programming File to create a bitstream of the design.(.v) file is converted into .bit file here.
+
+STEP:12 Load the Bit file into the SPARTAN 7 FPGA
+
+STEP:11 On the board, by giving required input, the LEDs starts to glow light, indicating the output.
+
+
 # Truth Table
 ![image](https://github.com/RESMIRNAIR/FULL_ADDER/assets/154305926/02ead8f5-d958-4c89-ac51-368ca086cf41)
 # Circuit Diagram
 ![image](https://github.com/RESMIRNAIR/FULL_ADDER/assets/154305926/418e00aa-ed19-4ab3-a413-bae9575bff0e)
 ![image](https://github.com/RESMIRNAIR/FULL_ADDER/assets/154305926/0c26fe47-d78c-43dd-ac0d-804e427a3bbc)
+
+# Program
+
+module FA(a,b,cin,sum,cout);
+input a,b,cin;
+output sum,cout;
+wire w1,w2,w3;
+xor g1(w1,a,b);
+and g2(w2,w1,cin);
+and g3(w3,a,b);
+xor g4(sum,w1,cin);
+or g5(cout,w2,w3);
+endmodule
+
+# output
+
+<img width="1203" alt="Screenshot 2024-02-17 120611" src="https://github.com/teja2134/FULL_ADDER/assets/161149578/d4271f72-25da-41fc-8971-e784fd2f1add">
+
+# Result
+
+     Thus the verilog program for Full adder has been simulated and verified successfully.
